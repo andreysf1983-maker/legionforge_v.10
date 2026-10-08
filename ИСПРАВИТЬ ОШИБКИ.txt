@@ -1,0 +1,390 @@
+
+ =========================================================
+  LEGIONFORGE 7.3.5 — установка сервера
+ =========================================================
+
+ [*] Проверка пройдена: права администратора получены.
+
+ [*] Проверка и запуск MySQL на порту 3306...
+ [OK] MySQL готов: D:\legionforge_v.91026\tools\mysql\server\bin\mysql.exe
+
+ [*] Поиск клиента World of Warcraft 7.3.5...
+ [OK] Клиент найден: D:\legionforge_v.91026\WoW_Client\Wow.exe
+
+ [*] Проверка MySQL...
+ [OK] MySQL работает: D:\legionforge_v.91026\tools\mysql\server\bin\mysql.exe
+
+ [OK] Сохранённая учётная запись MySQL проверена.
+ [OK] Подключение к MySQL успешно.
+
+ [*] Применение патча совместимости MySQL 8.x...
+ [*] Настройка производительности MySQL...
+ [OK] MySQL настроен.
+
+ [*] Проверка программ сервера: worldserver, bnetserver, утилиты карт...
+
+ [*] Готовых программ сервера нет - запускается АВТОМАТИЧЕСКАЯ КОМПИЛЯЦИЯ.
+     Всё нужное скачается в tools\ само: 7-Zip, CMake, Boost, OpenSSL и
+     официальный компилятор Microsoft - Visual Studio 2022 Build Tools.
+     Первый раз это занимает 1-2 часа. Если прервётся - запустите
+     setup.bat снова: уже скачанное повторно не загружается.
+
+ =========================================================
+  LEGIONFORGE 7.3.5 - автоматическая компиляция сервера
+ =========================================================
+
+
+  LEGIONFORGE 7.3.5 - автоматическая компиляция сервера
+  Журнал: D:\legionforge_v.91026\build_log.txt
+
+  [*] Свободно на диске: 643 ГБ; ОЗУ: 8 ГБ; ядер ЦП: 4
+
+  [*] Шаг 1/4. Подготовка портативных инструментов в tools\
+  [OK] Найден установленный 7-Zip: C:\Program Files\7-Zip\7z.exe
+  [OK] CMake уже подготовлен: tools\cmake
+  [OK] Найден компилятор: Visual Studio Build Tools 2022 17.14.37614.0
+  [OK] Boost 1.86.0 уже подготовлен: tools\boost_1_86_0
+  [OK] OpenSSL уже подготовлен: tools\openssl
+  [OK] MySQL для сборки: D:\legionforge_v.91026\tools\mysql\server
+
+  [*] Шаг 2/4. Генерация проекта CMake (1-3 минуты)...
+-- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.19045.
+-- The C compiler identification is MSVC 19.44.35228.0
+-- The CXX compiler identification is MSVC 19.44.35228.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Detected 64-bit platform
+-- MSVC: 64-bit platform, enforced -D_WIN64 parameter
+-- MSVC: Enabled increased number of sections in object files
+-- MSVC: Disabled NON-SECURE warnings
+-- MSVC: Enabled legacy STL helpers (_HAS_AUTO_PTR_ETC) + NOMINMAX
+-- MSVC: C++ standard pinned to C++14
+-- MSVC: Disabled POSIX warnings
+-- MSVC: Disabled generic compiletime warnings
+-- cotire 1.7.10 loaded.
+-- Found MySQL library: D:/legionforge_v.91026/tools/mysql/server/lib/libmysql.lib
+-- Found MySQL headers: D:/legionforge_v.91026/tools/mysql/server/include
+* LEGIONFORGE revision   : rev.1 2026-10-08 08:34:45 (Legion 7.3.5.26124 branch)
+* Install core to        : C:/Program Files/LEGIONFORGE
+* Build world/auth       : Yes (default)
+* Build with scripts     : Yes (static)
+* Build map/vmap tools   : Yes (default)
+* Build core w/PCH       : Yes (default)
+* Build scripts w/PCH    : Yes (default)
+* Show compile-warnings  : No  (default)
+* Use coreside debug     : No  (default)
+* Show source tree       : Yes (hierarchical)
+* Use GIT revision hash  : No
+ *** WITHOUT_GIT - WARNING!
+ *** By choosing the WITHOUT_GIT option you have waived all rights for support,
+ *** and accept that or all requests for support or assistance sent to the core
+ *** developers will be rejected. This due to that we will be unable to detect
+ *** what revision of the codebase you are using in a proper way.
+ *** We remind you that you need to use the repository codebase and a supported
+ *** version of git for the revision-hash to work, and be allowede to ask for
+ *** support if needed.
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - not found
+-- Found Threads: TRUE
+-- Performing Test STD_HAS_WORKING_WREGEX
+-- Performing Test STD_HAS_WORKING_WREGEX - Success
+Boost 1.66 found.
+Found Boost components:
+   system;filesystem;thread;program_options;iostreams
+-- Performing Test boost_filesystem_copy_links_without_NO_SCOPED_ENUM
+-- Performing Test boost_filesystem_copy_links_without_NO_SCOPED_ENUM - Success
+-- Looking for open
+-- Looking for open - found
+-- Found OpenSSL library: optimized;D:/legionforge_v.91026/tools/openssl/lib/VC/x64/MD/libssl.lib;optimized;D:/legionforge_v.91026/tools/openssl/lib/VC/x64/MD/libcrypto.lib;debug;D:/legionforge_v.91026/tools/openssl/lib/VC/x64/MDd/libssl.lib;debug;D:/legionforge_v.91026/tools/openssl/lib/VC/x64/MDd/libcrypto.lib
+-- Found OpenSSL headers: D:/legionforge_v.91026/tools/openssl/include
+-- OpenSSL manually configured from: D:/legionforge_v.91026/tools/openssl
+-- CXX target common cotired without unity build.
+-- CXX target database cotired without unity build.
+-- CXX target proto cotired without unity build.
+-- CXX target shared cotired without unity build.
+-- CXX RC target bnetserver cotired without unity build.
+-- CXX target game cotired without unity build.
+* Script configuration (static):
+    |
+    +- worldserver
+    |   +- BrokenIsles
+    |   +- Commands
+    |   +- Custom
+    |   +- DarkmoonIsland
+    |   +- Draenor
+    |   +- EasternKingdoms
+    |   +- Events
+    |   +- Kalimdor
+    |   +- Maelstrom
+    |   +- Northrend
+    |   +- OutdoorPvP
+    |   +- Outland
+    |   +- Pandaria
+    |   +- Pet
+    |   +- PlayerBot
+    |   +- Spells
+    |   +- World
+    |
+-- CXX target scripts cotired without unity build.
+-- CXX RC target worldserver cotired without unity build.
+-- Configuring done (28.6s)
+-- Generating done (2.2s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+    Boost_NO_SYSTEM_PATHS
+-- Build files have been written to: D:/legionforge_v.91026/build
+  [OK] Проект сгенерирован.
+
+  [*] Шаг 3/4. Компиляция (параллельных проектов: 2, PCH: да). Обычно 30-90 минут...
+  [готово] zlib.lib
+  [готово] fmt.lib
+  [готово] gsoap.lib
+  [готово] bzip2.lib
+  [готово] protobuf.lib
+  [готово] Recast.lib
+  [готово] Detour.lib
+  [готово] casc.lib
+  [готово] duktape.lib
+  [готово] g3dlib.lib
+  [готово] common.lib
+  ... идёт компиляция: 00:02:13
+  [готово] connection_patcher.exe
+  [готово] vmap4assembler.exe
+  [готово] database.lib
+  [готово] extractor_common.lib
+  [готово] mapextractor.exe
+  [готово] vmap4extractor.exe
+  [готово] proto.lib
+  [готово] mmaps_generator.exe
+  [готово] shared.lib
+  [готово] bnetserver.exe
+  ... идёт компиляция: 00:05:01
+  ... идёт компиляция: 00:09:45
+  ... идёт компиляция: 00:23:38
+  ... идёт компиляция: 00:29:02
+  ... идёт компиляция: 00:33:08
+  [готово] scripts.lib
+  [готово] game.lib
+  ... идёт компиляция: 00:42:45
+  [готово] worldserver.exe
+  [OK] Компиляция завершена.
+
+  [*] Шаг 4/4. Копирование программ и библиотек в server\
+
+  [OK] Сервер скомпилирован за 00:43:46. Файлы в папке server\:
+        worldserver.exe          26,9 МБ
+        bnetserver.exe           3,3 МБ
+        mapextractor.exe         440 КБ
+        vmap4extractor.exe       477 КБ
+        vmap4assembler.exe       259 КБ
+        mmaps_generator.exe      553 КБ
+        connection_patcher.exe   336 КБ
+
+ =========================================================
+  Компиляция завершена. Программы лежат в папке server\
+ =========================================================
+  Дальше: setup.bat - базы данных, карты, учётная запись,
+          затем play.bat - запуск сервера и клиента.
+
+ [OK] Программы сервера готовы.
+
+ [*] Подготовка дампов базы мира ADB_735.10: world + hotfix...
+  [OK] Дампы ADB_735.10 уже на месте.
+ [OK] Дампы world и hotfix найдены.
+
+ [*] Создание баз данных auth / characters / world / hotfixes...
+ [OK] Базы данных созданы.
+ [*] Создание MySQL-пользователя admin@legionforge.ru...
+ [OK] Пользователь MySQL admin@legionforge.ru настроен.
+ [*] Базовые схемы auth / characters - только в ПУСТЫЕ базы, данные игроков не затираются...
+     - база auth уже содержит таблиц: 31 - пропуск, данные сохранены
+     - база characters уже содержит таблиц: 118 - пропуск, данные сохранены
+ [*] Обновления схем auth / characters (без них worldserver не откроет базу персонажей)...
+      - обновления схемы auth уже применены ранее - пропуск
+      - обновления схемы characters уже применены ранее - пропуск
+ [OK] Базовые схемы импортированы и обновлены.
+
+ [OK] Базы world и hotfixes уже импортированы ранее - пропуск.
+      Для полного переимпорта удалите файл setup_tmp\world_imported.flag
+
+ [*] Применение кастомных SQL-патчей LEGIONFORGE...
+     - применение 31_remove_bots_characters.sql к базе characters
+     - применение 31_remove_bots_world.sql к базе world
+     [ВНИМАНИЕ] Ошибка при применении 31_remove_bots_world.sql
+     - применение 02_custom_creatures.sql к базе world
+     [ВНИМАНИЕ] Ошибка при применении 02_custom_creatures.sql
+     - применение 03_hotfix_column_patches.sql к базе hotfixes
+     - применение 04_fix_instance_data.sql к базе characters
+     - применение 05_legion_game_tele.sql к базе world
+     [ВНИМАНИЕ] Ошибка при применении 05_legion_game_tele.sql
+     - применение 07_legion_instance_template.sql к базе world
+     [ВНИМАНИЕ] Ошибка при применении 07_legion_instance_template.sql
+     - применение 08_all_instance_template.sql к базе world
+     [ВНИМАНИЕ] Ошибка при применении 08_all_instance_template.sql
+     - применение 09_lfg_dungeon_entrances.sql к базе world
+     [ВНИМАНИЕ] Ошибка при применении 09_lfg_dungeon_entrances.sql
+     - применение 10_legionforge_realm.sql к базе auth
+ [*] Применение модульных патчей LEGIONFORGE (40-49)...
+     - применение 40_legionforge_items.sql к базе hotfixes
+     [ВНИМАНИЕ] Ошибка при применении 40_legionforge_items.sql
+     - применение 40_legionforge_items.sql к базе world
+     [ВНИМАНИЕ] Ошибка при применении 40_legionforge_items.sql
+     - применение 41_legionforge_minibosses.sql к базе world
+     [ВНИМАНИЕ] Ошибка при применении 41_legionforge_minibosses.sql
+     - применение 42_legionforge_miniboss_loot.sql к базе world
+     [ВНИМАНИЕ] Ошибка при применении 42_legionforge_miniboss_loot.sql
+     - применение 43_legionforge_upgrade_tokens.sql к базе hotfixes
+     [ВНИМАНИЕ] Ошибка при применении 43_legionforge_upgrade_tokens.sql
+     - применение 43_legionforge_upgrade_tokens.sql к базе world
+     [ВНИМАНИЕ] Ошибка при применении 43_legionforge_upgrade_tokens.sql
+     - применение 44_legionforge_upgrade_limits.sql к базе world
+     [ВНИМАНИЕ] Ошибка при применении 44_legionforge_upgrade_limits.sql
+     - применение 44_legionforge_upgrade_limits.sql к базе hotfixes
+     [ВНИМАНИЕ] Ошибка при применении 44_legionforge_upgrade_limits.sql
+     - применение 45_legionforge_ancient_knowledge.sql к базе world
+     [ВНИМАНИЕ] Ошибка при применении 45_legionforge_ancient_knowledge.sql
+     - применение 46_legionforge_playerbots.sql к базе world
+     - применение 46_legionforge_playerbots.sql к базе auth
+     - применение 46_legionforge_playerbots.sql к базе characters
+     - применение 32_playerbot_auth.sql к базе auth
+     - применение 32_playerbot_names.sql к базе auth
+     - применение 32_playerbot_world.sql к базе world
+     - применение 47_legionforge_admin.sql к базе auth
+ [*] Применение остальных SQL-патчей...
+  [*] applying 04_fix_instance_data.sql -> characters...
+  [OK] 04_fix_instance_data.sql
+  [*] applying 31_remove_bots_characters.sql -> characters...
+  [OK] 31_remove_bots_characters.sql
+  [*] applying stitch\010_scenario_return_characters.sql -> characters...
+  [OK] stitch\010_scenario_return_characters.sql
+  [*] applying 31_remove_bots_world.sql -> world...
+      ERROR 1146 (42S02) at line 2: Table 'world.creature' doesn't exist
+  [!] FAIL 31_remove_bots_world.sql (exit 1)
+  [*] applying 02_custom_creatures.sql -> world...
+      ERROR 1146 (42S02) at line 9: Table 'world.gameobject' doesn't exist
+  [!] FAIL 02_custom_creatures.sql (exit 1)
+  [*] applying 07_legion_instance_template.sql -> world...
+      ERROR 1146 (42S02) at line 4: Table 'world.instance_template' doesn't exist
+  [!] FAIL 07_legion_instance_template.sql (exit 1)
+  [*] applying 08_all_instance_template.sql -> world...
+      ERROR 1146 (42S02) at line 5: Table 'world.instance_template' doesn't exist
+  [!] FAIL 08_all_instance_template.sql (exit 1)
+  [*] applying 09_lfg_dungeon_entrances.sql -> world...
+      ERROR 1146 (42S02) at line 3: Table 'world.lfg_dungeon_template' doesn't exist
+  [!] FAIL 09_lfg_dungeon_entrances.sql (exit 1)
+  [*] applying 10_legionforge_realm.sql -> auth...
+  [OK] 10_legionforge_realm.sql
+  [*] applying 13_warlock_starter_pet.sql -> world...
+      ERROR 1146 (42S02) at line 7: Table 'world.playercreateinfo_cast_spell' doesn't exist
+  [!] FAIL 13_warlock_starter_pet.sql (exit 1)
+  [*] applying 15_young_and_vicious.sql -> world...
+      ERROR 1146 (42S02) at line 6: Table 'world.quest_template_addon' doesn't exist
+  [!] FAIL 15_young_and_vicious.sql (exit 1)
+  [*] applying 18_quest_item_target.sql -> world...
+      ERROR 1146 (42S02) at line 24: Table 'world.creature_template' doesn't exist
+  [!] FAIL 18_quest_item_target.sql (exit 1)
+  [*] applying 19_quest_generic_phase.sql -> world...
+      ERROR 1146 (42S02) at line 6: Table 'world.quest_template_addon' doesn't exist
+  [!] FAIL 19_quest_generic_phase.sql (exit 1)
+  [*] applying 20_imp_display.sql -> world...
+      ERROR 1146 (42S02) at line 6: Table 'world.creature_template' doesn't exist
+  [!] FAIL 20_imp_display.sql (exit 1)
+  [*] applying 20_imp_display_characters.sql -> characters...
+  [OK] 20_imp_display_characters.sql
+  [*] applying 22_they_sent_assassins.sql -> world...
+      ERROR 1146 (42S02) at line 4: Table 'world.creature_queststarter' doesn't exist
+  [!] FAIL 22_they_sent_assassins.sql (exit 1)
+  [*] applying 23_kill_target_questgivers.sql -> world...
+      ERROR 1146 (42S02) at line 7: Table 'world.creature_template' doesn't exist
+  [!] FAIL 23_kill_target_questgivers.sql (exit 1)
+  [*] applying 24_neutral_kill_targets.sql -> world...
+      ERROR 1146 (42S02) at line 7: Table 'world.creature_template' doesn't exist
+  [!] FAIL 24_neutral_kill_targets.sql (exit 1)
+  [*] applying 25_clear_promo_mail_world.sql -> world...
+      ERROR 1146 (42S02) at line 3: Table 'world.achievement_reward' doesn't exist
+  [!] FAIL 25_clear_promo_mail_world.sql (exit 1)
+  [*] applying 25_clear_promo_mail_characters.sql -> characters...
+  [OK] 25_clear_promo_mail_characters.sql
+  [*] applying 26_welcome_sender.sql -> world...
+      ERROR 1146 (42S02) at line 2: Table 'world.creature_template' doesn't exist
+  [!] FAIL 26_welcome_sender.sql (exit 1)
+  [*] applying 27_worgen_start.sql -> world...
+      ERROR 1146 (42S02) at line 6: Table 'world.playercreateinfo' doesn't exist
+  [!] FAIL 27_worgen_start.sql (exit 1)
+  [*] applying 28_fel_imp_display.sql -> world...
+      ERROR 1146 (42S02) at line 7: Table 'world.creature_template' doesn't exist
+  [!] FAIL 28_fel_imp_display.sql (exit 1)
+  [*] applying generated_p05_item_targets.sql -> world...
+      ERROR 1146 (42S02) at line 56: Table 'world.creature_template' doesn't exist
+  [!] FAIL generated_p05_item_targets.sql (exit 1)
+  [!] 18 SQL patch(es) failed
+ [ВНИМАНИЕ] Часть SQL-патчей завершилась с ошибкой, подробности выше.
+ [*] Сброс журнала обновлений баз данных...
+
+ [*] Настройка worldserver.conf...
+ [OK] worldserver.conf настроен.
+ [*] Настройка bnetserver.conf...
+ [OK] bnetserver.conf настроен.
+  [OK] worldserver.conf : MySQLExecutable = D:/legionforge_v.91026/tools/mysql/server/bin/mysql.exe
+  [OK] bnetserver.conf : MySQLExecutable = D:/legionforge_v.91026/tools/mysql/server/bin/mysql.exe
+
+ [*] Извлечение игровых данных (maps / vmaps / mmaps) из клиента...
+
+ =========================================================
+  Map / VMap extraction (Vanilla through Legion)
+ =========================================================
+
+[09:18:39] ClientDir = D:\legionforge_v.91026\WoW_Client
+[09:18:39] ServerDir = D:\legionforge_v.91026\server
+[09:18:39] DataDir   = D:\legionforge_v.91026\server\data
+[09:18:39] Client Data size ~ 91,97 GB
+  [*] Extracting maps + DBC (height data; missing tiles = fall through)
+      15-40 minutes depending on disk speed.
+[09:18:39] RUN: D:\legionforge_v.91026\server\mapextractor.exe -i D:\legionforge_v.91026\WoW_Client -o D:\legionforge_v.91026\server\data
+[09:18:39] CWD: D:\legionforge_v.91026\WoW_Client
+[09:28:25] exit code 0
+[09:28:27] Total .map tiles: 20499
+[09:28:27] Eastern Kingdoms [Vanilla] map 0 tiles=839 min=80 [OK]
+  --- Vanilla ---
+  [OK] Eastern Kingdoms: 839 tiles
+[09:28:27] Kalimdor [Vanilla] map 1 tiles=1011 min=80 [OK]
+  [OK] Kalimdor: 1011 tiles
+[09:28:27] Outland [BC] map 530 tiles=826 min=25 [OK]
+  --- BC ---
+  [OK] Outland: 826 tiles
+[09:28:27] Northrend [WotLK] map 571 tiles=1131 min=30 [OK]
+  --- WotLK ---
+  [OK] Northrend: 1131 tiles
+[09:28:27] Deepholm [Cata] map 646 tiles=100 min=5 [OK]
+  --- Cata ---
+  [OK] Deepholm: 100 tiles
+[09:28:27] Pandaria [MoP] map 870 tiles=684 min=25 [OK]
+  --- MoP ---
+  [OK] Pandaria: 684 tiles
+[09:28:27] Draenor [WoD] map 1116 tiles=1221 min=25 [OK]
+  --- WoD ---
+  [OK] Draenor: 1221 tiles
+[09:28:27] Broken Isles [Legion] map 1220 tiles=729 min=40 [OK]
+  --- Legion ---
+  [OK] Broken Isles: 729 tiles
+[09:28:27] Argus [Legion] map 1669 tiles=194 min=8 [OK]
+  [OK] Argus: 194 tiles
+  [OK] Maps and DBC extracted (20499 tiles).
+
+  [*] Extracting vmaps (indoor/WMO collision)
+[09:28:29] RUN: D:\legionforge_v.91026\server\vmap4extractor.exe -d D:\legionforge_v.91026\WoW_Client
+[09:28:29] CWD: D:\legionforge_v.91026\server\setup_tmp\vmap_work
+
+тут я сам остановил...
